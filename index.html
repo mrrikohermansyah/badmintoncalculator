@@ -1,63 +1,106 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Kalkulator Biaya Badminton</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="Badmintonlogo.png">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="Badmintonlogo.png" />
+  </head>
 
-<body>
+  <body>
     <div class="container" id="exportArea">
-        <h1>Kalkulator Biaya Badminton</h1>
-        <label>Unit Lapangan</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="unitLapangan">
+      <h1>Kalkulator Biaya Badminton</h1>
 
+      <label>Harga Lapangan / Jam</label>
+      <input
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="hargaLapanganPerJam"
+        placeholder="Rp 0"
+      />
 
-        <label>Jam Main</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="jamMain">
+      <label>Unit Lapangan</label>
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="unitLapangan"
+        placeholder="Jumlah Lapangan"
+      />
 
+      <label>Jam Main</label>
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="jamMain"
+        placeholder="Jumlah Jam"
+      />
 
-        <label>Harga Lapangan per Jam</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="hargaLapanganPerJam">
+      <label>Harga 1 Slop Shuttlecock</label>
+      <input
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="hargaSlop"
+        placeholder="Rp 0"
+      />
 
+      <label>Isi Slop</label>
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="isiSlop"
+        placeholder="Isi Tabung Shuttlecock"
+      />
 
-        <label>Harga 1 Slop Shuttlecock</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="hargaSlop">
+      <label>Jumlah Player</label>
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="jumlahPlayer"
+        placeholder="Pemain yang hadir"
+      />
 
+      <label>Shuttlecock Terpakai</label>
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="cockTerpakai"
+        placeholder="Jumlah Shuttlecock Terpakai"
+      />
 
-        <label>Isi Shuttlecock per Slop</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="isiSlop" >
-
-
-        <label>Jumlah Player</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="jumlahPlayer" >
-
-
-        <label>Cock Terpakai</label>
-        <input type="number" inputmode="numeric" pattern="[0-9]*" id="cockTerpakai" >
-
-
-        <div class="result">
-            <p><strong>Harga per Cock:</strong> <span id="hargaPerCock">0</span></p>
-            <p><strong>Harga Cock per Orang:</strong> <span id="hargaCockPerOrang">0</span></p>
-            <p><strong>Total Harga Lapangan:</strong> <span id="totalLapangan">0</span></p>
-            <p><strong>Total Keseluruhan:</strong> <span id="totalKeseluruhan">0</span></p>
-            <p><strong>Biaya per Orang:</strong> <span id="biayaPerOrang">0</span></p>
-            <p><strong>Biaya Pembulatan:</strong> <span id="biayaPembulatan">0</span></p>
-            <p><strong>Selisih Pembulatan:</strong> <span id="selisih">0</span></p>
-        </div>
-        
+      <div class="result">
+        <p>
+          <strong>Total Harga Lapangan:</strong>
+          <span id="totalLapangan">0</span>
+        </p>
+        <p>
+          <strong>Harga Shuttlecock Terpakai:</strong>
+          <span id="hargaPerCock">0</span>
+        </p>
+        <p>
+          <strong>Harga Shuttlecock per Orang:</strong>
+          <span id="hargaCockPerOrang">0</span>
+        </p>
+        <p>
+          <strong>Total Harga Lapangan + Shuttlecock:</strong>
+          <span id="totalKeseluruhan">0</span>
+        </p>
+        <p>
+          <strong>Biaya per Orang:</strong> <span id="biayaPerOrang">0</span>
+        </p>
+        <p><strong>Pembulatan:</strong> <span id="selisih">0</span></p>
+        <p><strong>Total Biaya:</strong> <span id="biayaPembulatan">0</span></p>
+      </div>
     </div>
     <button id="exportBtn">Export ke Gambar</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
-</body>
-
-
+  </body>
 </html>
-
-
-
