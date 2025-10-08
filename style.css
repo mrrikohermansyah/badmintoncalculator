@@ -1,6 +1,4 @@
 /* style.css */
-
-
 body {
     font-family: 'Inter', Arial, sans-serif;
     background: linear-gradient(135deg, #dbeafe, #eff6ff);
@@ -46,16 +44,13 @@ label {
 input {
     width: 100%;
     padding: 12px 14px;
-    /* lebih lega */
     margin-bottom: 14px;
     border: 1px solid #d1d5db;
     border-radius: 12px;
     font-size: 1rem;
     box-sizing: border-box;
-    /* penting biar padding tidak bikin overflow */
     transition: border 0.2s, box-shadow 0.2s;
 }
-
 
 input:focus {
     outline: none;
@@ -88,7 +83,26 @@ input:focus {
 }
 
 
-/* Responsive tweaks */
+button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -113,7 +127,7 @@ input:focus {
 
     input {
         font-size: 0.9rem;
-        padding: 8px 10px;
+        padding: 10px 12px;
     }
 
 
