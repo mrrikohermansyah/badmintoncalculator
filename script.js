@@ -1,13 +1,13 @@
 const inputs = document.querySelectorAll("input");
 
-// fungsi untuk bersihin input jadi angka murni
+// 🔹 Bersihin input jadi angka murni
 function cleanNumber(str) {
   return parseFloat(str.replace(/[^0-9]/g, "")) || 0;
 }
 
-// fungsi format jadi Rupiah
+// 🔹 Format jadi Rupiah untuk input harga
 function formatRupiahInput(el) {
-  let angka = el.value.replace(/[^0-9]/g, ""); // ambil hanya digit
+  let angka = el.value.replace(/[^0-9]/g, "");
   if (angka === "") {
     el.value = "";
     return;
@@ -15,13 +15,21 @@ function formatRupiahInput(el) {
   el.value = "Rp " + parseInt(angka).toLocaleString("id-ID");
 }
 
-// kalkulasi
+// 🔹 Format Rupiah untuk output (tampilan)
+function formatRupiah(angka) {
+  return "Rp " + angka.toLocaleString("id-ID");
+}
+
+// 🔹 Kalkulasi biaya
 function hitung() {
-  const hargaTotalCockEl = document.getElementById("hargaTotalCock").value;
   const unitLapangan = cleanNumber(
     document.getElementById("unitLapangan").value
   );
-  const jamMain = cleanNumber(document.getElementById("jamMain").value);
+
+  // durasi main dalam menit → konversi ke jam
+  const menitMain = parseInt(document.getElementById("jamMain").value) || 0;
+  const jamMain = menitMain / 60;
+
   const hargaLapanganPerJam = cleanNumber(
     document.getElementById("hargaLapanganPerJam").value
   );
@@ -35,17 +43,18 @@ function hitung() {
 
   const hargaPerCock = hargaSlop / isiSlop;
   const hargaTotalCock = hargaPerCock * cockTerpakai;
-  const hargaCockPerOrang = (hargaPerCock / jumlahPlayer) * cockTerpakai;
+  const hargaCockPerOrang = (hargaPerCock * cockTerpakai) / jumlahPlayer;
   const totalLapangan = hargaLapanganPerJam * unitLapangan * jamMain;
-  const totalKeseluruhan = totalLapangan + hargaPerCock * cockTerpakai;
+  const totalKeseluruhan = totalLapangan + hargaTotalCock;
   const biayaPerOrang = totalKeseluruhan / jumlahPlayer;
   const biayaPembulatan = Math.ceil(biayaPerOrang / 1000) * 1000;
   const selisih = biayaPembulatan - biayaPerOrang;
 
-  document.getElementById("hargaTotalCock").innerText =
-    formatRupiah(hargaTotalCock);
+  // 🔹 Update hasil
   document.getElementById("hargaPerCock").innerText =
     formatRupiah(hargaPerCock);
+  document.getElementById("hargaTotalCock").innerText =
+    formatRupiah(hargaTotalCock);
   document.getElementById("hargaCockPerOrang").innerText =
     formatRupiah(hargaCockPerOrang);
   document.getElementById("totalLapangan").innerText =
@@ -59,13 +68,8 @@ function hitung() {
   document.getElementById("selisih").innerText = formatRupiah(selisih);
 }
 
-function formatRupiah(angka) {
-  return "Rp " + angka.toLocaleString("id-ID", { minimumFractionDigits: 0 });
-}
-
-// pasang event listener
+// 🔹 Event listener
 inputs.forEach((input) => {
-  // kalau input termasuk harga → format dengan Rp
   if (input.id === "hargaLapanganPerJam" || input.id === "hargaSlop") {
     input.addEventListener("input", function () {
       formatRupiahInput(this);
@@ -76,11 +80,11 @@ inputs.forEach((input) => {
   }
 });
 
+// 🔹 Hitung awal
 hitung();
 
-// Export ke gambar
-const exportBtn = document.getElementById("exportBtn");
-exportBtn.addEventListener("click", () => {
+// 🔹 Export ke gambar
+document.getElementById("exportBtn").addEventListener("click", () => {
   const captureArea = document.getElementById("exportArea");
   html2canvas(captureArea).then((canvas) => {
     const link = document.createElement("a");
@@ -89,4 +93,3 @@ exportBtn.addEventListener("click", () => {
     link.click();
   });
 });
-
