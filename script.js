@@ -43,7 +43,7 @@ hitung();
 // Export ke gambar
 const exportBtn = document.getElementById("exportBtn");
 exportBtn.addEventListener("click", () => {
-const captureArea = document.getElementById("captureArea");
+const captureArea = document.getElementById("exportArea");
 html2canvas(captureArea).then(canvas => {
 const link = document.createElement("a");
 link.download = "biaya-badminton.png";
@@ -51,3 +51,4 @@ link.href = canvas.toDataURL();
 link.click();
 });
 });
+
