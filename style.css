@@ -9,7 +9,7 @@ body {
 
 
 .container {
-    max-width: 420px;
+    max-width: 800px;
     /* biar di desktop nggak kepanjangan */
     width: 100%;
     /* fleksibel */
@@ -108,7 +108,7 @@ button:hover {
 
 
 /* Responsif di HP */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     body {
         padding: 0;
         /* hilangkan padding default body */
