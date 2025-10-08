@@ -9,8 +9,12 @@ body {
 
 
 .container {
-    max-width: 80%;
-    margin: auto;
+    max-width: 420px;
+    /* biar di desktop nggak kepanjangan */
+    width: 100%;
+    /* fleksibel */
+    margin: 20px auto;
+    /* otomatis center */
     background: white;
     padding: 24px;
     border-radius: 16px;
@@ -103,36 +107,37 @@ button:hover {
 }
 
 
+/* Responsif di HP */
 @media (max-width: 600px) {
     body {
-        padding: 10px;
+        padding: 0;
+        /* hilangkan padding default body */
     }
-
 
     .container {
+        margin: 10px;
+        /* kanan kiri lebih sempit */
+        max-width: 100%;
+        /* full width di layar HP */
         padding: 16px;
+        /* isi tetap nyaman */
         border-radius: 12px;
     }
-
 
     h1 {
         font-size: 1.4rem;
     }
 
-
     label {
         font-size: 0.9rem;
     }
-
 
     input {
         font-size: 0.9rem;
         padding: 10px 12px;
     }
 
-
     .result p {
         font-size: 0.9rem;
     }
 }
-
