@@ -1,0 +1,123 @@
+/* style.css */
+
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    margin: 0;
+    padding: 20px;
+    color: #1f2937;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+}
+
+
+.container:hover {
+    transform: translateY(-3px);
+}
+
+
+h1 {
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    /* lebih lega */
+    margin-bottom: 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    /* penting biar padding tidak bikin overflow */
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+
+.result {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+
+.result p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 4px;
+}
+
+
+.result p strong {
+    color: #111827;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+
+    .container {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+
+    label {
+        font-size: 0.9rem;
+    }
+
+
+    input {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+
+    .result p {
+        font-size: 0.9rem;
+    }
+}

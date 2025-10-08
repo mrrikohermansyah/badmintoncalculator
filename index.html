@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Biaya Badminton</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kalkulator Biaya Badminton</h1>
+        <label>Unit Lapangan</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="unitLapangan">
+
+
+        <label>Jam Main</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="jamMain">
+
+
+        <label>Harga Lapangan per Jam</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="hargaLapanganPerJam">
+
+
+        <label>Harga 1 Slop Shuttlecock</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="hargaSlop">
+
+
+        <label>Isi Shuttlecock per Slop</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="isiSlop" >
+
+
+        <label>Jumlah Player</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="jumlahPlayer" >
+
+
+        <label>Cock Terpakai</label>
+        <input type="number" inputmode="numeric" pattern="[0-9]*" id="cockTerpakai" >
+
+
+        <div class="result">
+            <p><strong>Harga per Cock:</strong> <span id="hargaPerCock">0</span></p>
+            <p><strong>Harga Cock per Orang:</strong> <span id="hargaCockPerOrang">0</span></p>
+            <p><strong>Total Harga Lapangan:</strong> <span id="totalLapangan">0</span></p>
+            <p><strong>Total Keseluruhan:</strong> <span id="totalKeseluruhan">0</span></p>
+            <p><strong>Biaya per Orang:</strong> <span id="biayaPerOrang">0</span></p>
+            <p><strong>Biaya Pembulatan:</strong> <span id="biayaPembulatan">0</span></p>
+            <p><strong>Selisih Pembulatan:</strong> <span id="selisih">0</span></p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
