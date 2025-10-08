@@ -15,7 +15,7 @@ const cockTerpakai = parseFloat(document.getElementById("cockTerpakai").value) |
 const hargaPerCock = hargaSlop / isiSlop;
 const hargaCockPerOrang = (hargaPerCock / jumlahPlayer) * cockTerpakai;
 const totalLapangan = hargaLapanganPerJam * unitLapangan * jamMain;
-const totalKeseluruhan = totalLapangan + (hargaPerCock / jumlahPlayer) * cockTerpakai;
+const totalKeseluruhan = totalLapangan + (hargaPerCock * cockTerpakai);
 const biayaPerOrang = totalKeseluruhan / jumlahPlayer;
 const biayaPembulatan = Math.ceil(biayaPerOrang / 1000) * 1000;
 const selisih = biayaPembulatan - biayaPerOrang;
@@ -38,3 +38,16 @@ return "Rp " + angka.toLocaleString("id-ID", {minimumFractionDigits:0});
 
 inputs.forEach(input => input.addEventListener("input", hitung));
 hitung();
+
+
+// Export ke gambar
+const exportBtn = document.getElementById("exportBtn");
+exportBtn.addEventListener("click", () => {
+const captureArea = document.getElementById("captureArea");
+html2canvas(captureArea).then(canvas => {
+const link = document.createElement("a");
+link.download = "biaya-badminton.png";
+link.href = canvas.toDataURL();
+link.click();
+});
+});
