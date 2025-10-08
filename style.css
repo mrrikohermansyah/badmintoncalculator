@@ -88,8 +88,14 @@ input:focus {
 
 
 button {
-    margin-top: 20px;
+    display: block;
+    /* biar bisa pakai margin auto */
+    max-width: 800px;
+    /* batas lebar tombol, bisa disesuaikan */
     width: 100%;
+    /* fleksibel di bawah 300px */
+    margin: 0px auto;
+    /* auto kiri kanan = center */
     padding: 12px;
     background: #2563eb;
     color: white;
