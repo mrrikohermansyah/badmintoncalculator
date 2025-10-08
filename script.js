@@ -17,6 +17,7 @@ function formatRupiahInput(el) {
 
 // kalkulasi
 function hitung() {
+  const hargaTotalCockEl = document.getElementById("hargaTotalCock").value;
   const unitLapangan = cleanNumber(
     document.getElementById("unitLapangan").value
   );
@@ -33,6 +34,7 @@ function hitung() {
   );
 
   const hargaPerCock = hargaSlop / isiSlop;
+  const hargaTotalCock = hargaPerCock * cockTerpakai;
   const hargaCockPerOrang = (hargaPerCock / jumlahPlayer) * cockTerpakai;
   const totalLapangan = hargaLapanganPerJam * unitLapangan * jamMain;
   const totalKeseluruhan = totalLapangan + hargaPerCock * cockTerpakai;
@@ -40,6 +42,8 @@ function hitung() {
   const biayaPembulatan = Math.ceil(biayaPerOrang / 1000) * 1000;
   const selisih = biayaPembulatan - biayaPerOrang;
 
+  document.getElementById("hargaTotalCock").innerText =
+    formatRupiah(hargaTotalCock);
   document.getElementById("hargaPerCock").innerText =
     formatRupiah(hargaPerCock);
   document.getElementById("hargaCockPerOrang").innerText =
@@ -85,3 +89,4 @@ exportBtn.addEventListener("click", () => {
     link.click();
   });
 });
+
