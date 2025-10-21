@@ -8,135 +8,207 @@
     <link rel="icon" type="image/png" href="Badmintonlogo.png" />
   </head>
   <body>
-    <div class="container" id="exportArea">
-      <h1>Kalkulator Biaya Badminton</h1>
+    <div class="main-container">
+      <div class="container" id="inputArea">
+        <h1>Kalkulator Biaya Badminton</h1>
 
-      <div class="input-group">
-        <label for="hargaLapanganPerJam">Harga Lapangan / Jam</label>
-        <input
-          type="text"
-          inputmode="numeric"
-          id="hargaLapanganPerJam"
-          placeholder="Rp 0"
-        />
-      </div>
-
-      <div class="input-group">
-        <label for="unitLapangan">Unit Lapangan</label>
-        <input
-          type="number"
-          inputmode="numeric"
-          id="unitLapangan"
-          placeholder="Jumlah Lapangan"
-          min="1"
-          value="1"
-        />
-      </div>
-
-      <div class="input-group">
-        <label for="jamMain">Durasi Main (menit)</label>
-        <input
-          type="number"
-          id="jamMain"
-          placeholder="Isi dalam menit, contoh 60"
-          min="1"
-          value="60"
-        />
-        <p class="info-text">Durasi dalam menit akan dikonversi ke jam</p>
-      </div>
-
-      <div class="input-group">
-        <label for="hargaSlop">Harga 1 Slop Shuttlecock</label>
-        <input
-          type="text"
-          inputmode="numeric"
-          id="hargaSlop"
-          placeholder="Rp 0"
-        />
-      </div>
-
-      <div class="input-group">
-        <label for="isiSlop">Isi Slop</label>
-        <input
-          type="number"
-          inputmode="numeric"
-          id="isiSlop"
-          placeholder="Isi Tabung Shuttlecock"
-          min="1"
-          value="12"
-        />
-      </div>
-
-      <div class="input-group">
-        <label for="jumlahPlayer">Jumlah Player</label>
-        <input
-          type="number"
-          inputmode="numeric"
-          id="jumlahPlayer"
-          placeholder="Pemain yang hadir"
-          min="1"
-          value="4"
-        />
-      </div>
-
-      <div class="input-group">
-        <label for="cockTerpakai">Shuttlecock Terpakai</label>
-        <input
-          type="number"
-          inputmode="numeric"
-          id="cockTerpakai"
-          placeholder="Jumlah Shuttlecock Terpakai"
-          min="0"
-          value="0"
-        />
-      </div>
-
-      <div class="result">
-        <div class="result-title">Rincian Biaya</div>
-
-        <div class="result-item">
-          <span>Total Harga Lapangan:</span>
-          <span id="totalLapangan">Rp 0</span>
+        <div class="input-group">
+          <label for="hargaLapanganPerJam">Harga Lapangan / Jam</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            id="hargaLapanganPerJam"
+            placeholder="Rp 0"
+          />
         </div>
 
-        <div class="result-item">
-          <span>Harga per 1 Shuttlecock:</span>
-          <span id="hargaPerCock">Rp 0</span>
+        <div class="input-group">
+          <label for="unitLapangan">Unit Lapangan</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="unitLapangan"
+            placeholder="Jumlah Lapangan"
+            min="1"
+            value="1"
+          />
         </div>
 
-        <div class="result-item">
-          <span>Total Harga Pemakaian Shuttlecock:</span>
-          <span id="hargaTotalCock">Rp 0</span>
+        <div class="input-group">
+          <label for="jamMain">Durasi Main (menit)</label>
+          <input
+            type="number"
+            id="jamMain"
+            placeholder="Isi dalam menit, contoh 60"
+            min="1"
+            value="60"
+          />
+          <p class="info-text">Durasi dalam menit akan dikonversi ke jam</p>
         </div>
 
-        <div class="result-item">
-          <span>Harga Shuttlecock per Orang:</span>
-          <span id="hargaCockPerOrang">Rp 0</span>
+        <div class="input-group">
+          <label for="hargaSlop">Harga 1 Slop Shuttlecock</label>
+          <input
+            type="text"
+            inputmode="numeric"
+            id="hargaSlop"
+            placeholder="Rp 0"
+          />
         </div>
 
-        <div class="result-item highlight">
-          <span>Total Harga Lapangan + Shuttlecock:</span>
-          <span id="totalKeseluruhan">Rp 0</span>
+        <div class="input-group">
+          <label for="isiSlop">Isi Slop</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="isiSlop"
+            placeholder="Isi Tabung Shuttlecock"
+            min="1"
+            value="12"
+          />
         </div>
 
-        <div class="result-item">
-          <span>Biaya per Orang:</span>
-          <span id="biayaPerOrang">Rp 0</span>
+        <div class="input-group">
+          <label for="jumlahPlayer">Jumlah Player</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="jumlahPlayer"
+            placeholder="Pemain yang hadir"
+            min="1"
+            value="4"
+          />
         </div>
 
-        <div class="result-item">
-          <span>Pembulatan:</span>
-          <span id="selisih">Rp 0</span>
+        <div class="input-group">
+          <label for="cockTerpakai">Shuttlecock Terpakai</label>
+          <input
+            type="number"
+            inputmode="numeric"
+            id="cockTerpakai"
+            placeholder="Jumlah Shuttlecock Terpakai"
+            min="0"
+            value="0"
+          />
         </div>
 
-        <div class="result-item total">
-          <span>Total Biaya per Orang:</span>
-          <span id="biayaPembulatan">Rp 0</span>
+        <div class="result">
+          <div class="result-title">Rincian Biaya</div>
+
+          <div class="result-item">
+            <span>Total Harga Lapangan:</span>
+            <span id="totalLapangan">Rp 0</span>
+          </div>
+
+          <div class="result-item">
+            <span>Harga per 1 Shuttlecock:</span>
+            <span id="hargaPerCock">Rp 0</span>
+          </div>
+
+          <div class="result-item">
+            <span>Total Harga Pemakaian Shuttlecock:</span>
+            <span id="hargaTotalCock">Rp 0</span>
+          </div>
+
+          <div class="result-item">
+            <span>Harga Shuttlecock per Orang:</span>
+            <span id="hargaCockPerOrang">Rp 0</span>
+          </div>
+
+          <div class="result-item highlight">
+            <span>Total Harga Lapangan + Shuttlecock:</span>
+            <span id="totalKeseluruhan">Rp 0</span>
+          </div>
+
+          <div class="result-item">
+            <span>Biaya per Orang:</span>
+            <span id="biayaPerOrang">Rp 0</span>
+          </div>
+
+          <div class="result-item">
+            <span>Pembulatan:</span>
+            <span id="selisih">Rp 0</span>
+          </div>
+
+          <div class="result-item total">
+            <span>Total Biaya per Orang:</span>
+            <span id="biayaPembulatan">Rp 0</span>
+          </div>
+        </div>
+      </div>
+
+      <button id="exportBtn">Export Receipt</button>
+
+      <!-- Receipt untuk export -->
+      <div id="receiptArea" class="receipt-container" style="display: none">
+        <div class="receipt">
+          <div class="receipt-header">
+            <div class="receipt-title">BADMINTON CLUB</div>
+            <div class="receipt-subtitle">BILLING STATEMENT</div>
+            <div class="receipt-date" id="receiptDate"></div>
+          </div>
+
+          <div class="receipt-divider">═══════════════════════════════</div>
+
+          <div class="receipt-section">
+            <div class="receipt-item">
+              <span
+                >Lapangan (@<span id="receiptHargaLapangan">Rp 0</span
+                >/jam)</span
+              >
+              <span id="receiptLapanganDetail">0 unit × 0 jam</span>
+              <span class="receipt-amount" id="receiptTotalLapangan">Rp 0</span>
+            </div>
+
+            <div class="receipt-item">
+              <span
+                >Shuttlecock (<span id="receiptCockTerpakai">0</span> pcs)</span
+              >
+              <span id="receiptCockDetail">@Rp 0/pcs</span>
+              <span class="receipt-amount" id="receiptTotalCock">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="receipt-divider">───────────────────────────────</div>
+
+          <div class="receipt-section">
+            <div class="receipt-total-line">
+              <span>SUBTOTAL</span>
+              <span id="receiptSubtotal">Rp 0</span>
+            </div>
+            <div class="receipt-total-line">
+              <span>Pemain</span>
+              <span id="receiptJumlahPlayer">0 orang</span>
+            </div>
+          </div>
+
+          <div class="receipt-divider">───────────────────────────────</div>
+
+          <div class="receipt-section">
+            <div class="receipt-total-line">
+              <span>Biaya per Orang</span>
+              <span id="receiptBiayaPerOrang">Rp 0</span>
+            </div>
+            <div class="receipt-total-line">
+              <span>Pembulatan</span>
+              <span id="receiptSelisih">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="receipt-divider">═══════════════════════════════</div>
+
+          <div class="receipt-grand-total">
+            <span>TOTAL PER ORANG</span>
+            <span id="receiptGrandTotal">Rp 0</span>
+          </div>
+
+          <div class="receipt-footer">
+            <div>Terima kasih telah bermain!</div>
+            <div>www.badmintonclub.com</div>
+          </div>
         </div>
       </div>
     </div>
-
-    <button id="exportBtn">Export ke Gambar</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
