@@ -1,5 +1,5 @@
-// sw.js - Service Worker untuk Badminton Calculator
-const CACHE_NAME = "badminton-calc-v1.1";
+// sw.js - Service Worker
+const CACHE_NAME = "badminton-calc-v1.2";
 const urlsToCache = [
   "/",
   "/index.html",
@@ -14,14 +14,19 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("Cache opened");
-      // Gunakan cache.add() instead of cache.addAll() untuk handle error individual
-      return Promise.all(
-        urlsToCache.map((url) => {
-          return cache.add(url).catch((err) => {
-            console.log(`Failed to cache ${url}:`, err);
-          });
-        })
-      );
+      // Cache hanya file yang penting
+      return cache
+        .addAll([
+          "/",
+          "/index.html",
+          "/style.css",
+          "/script.js",
+          "/manifest.json",
+          "/Badmintonlogo.png",
+        ])
+        .catch((err) => {
+          console.log("Cache addAll failed:", err);
+        });
     })
   );
 });
@@ -29,10 +34,7 @@ self.addEventListener("install", (event) => {
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((response) => {
-      if (response) {
-        return response;
-      }
-      return fetch(event.request);
+      return response || fetch(event.request);
     })
   );
 });
