@@ -6,6 +6,24 @@
     <title>Kalkulator Biaya Badminton</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="Badmintonlogo.png" />
+
+    <!-- ===== TAMBAHKAN KODE INI UNTUK HOMESCREEN ICON ===== -->
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Meta tags untuk iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kalkulator Badminton" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
+
+    <!-- Meta tags untuk theme color -->
+    <meta name="theme-color" content="#2ecc71" />
+    <meta name="msapplication-TileColor" content="#2ecc71" />
+    <meta name="msapplication-TileImage" content="icons/icon-144x144.png" />
+
+    <!-- Fallback untuk berbagai browser -->
+    <link rel="shortcut icon" href="Badmintonlogo.png" type="image/png" />
   </head>
   <body>
     <div class="main-container">
@@ -217,6 +235,22 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
+
+    <!-- ===== TAMBAHKAN SCRIPT INI UNTUK REGISTER SERVICE WORKER ===== -->
+    <script>
+      // Register Service Worker untuk PWA
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(function (registration) {
+              console.log("ServiceWorker registered successfully");
+            })
+            .catch(function (error) {
+              console.log("ServiceWorker registration failed: ", error);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
-
